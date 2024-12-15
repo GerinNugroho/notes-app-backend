@@ -109,17 +109,17 @@ const deleteNoteByIdHandler = (request, h) => {
 
   if (index !== -1) {
     notes.splice(index, 1);
-    const respone = h.respone({
+    const response = h.response({
       status: 'success',
       message: 'Catatan berhasil dihapus',
     });
-    respone.code(200);
-    return respone;
+    response.code(200);
+    return response;
   }
 
   const response = h.response({
     status: 'fail',
-    message: 'Catatan gagal dihapus. Id tidak ditemukan',
+    message: 'Catatan tidak ditemukan',
   });
   response.code(404);
   return response;
